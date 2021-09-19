@@ -20,13 +20,12 @@ def main():
 
         # for i in raw:
         #     print(i[0], i[1], i[2], i[3])
-        #os.remove('C:\\Users\\User\\Downloads\\Replay 2021.txt')
+        os.remove('C:\\Users\\User\\Downloads\\Replay 2021.txt')
         [path, date] = check()
         os.chdir(path)
         #print(*raw, sep='\n')
         csvfile(raw, date)
         markdown(raw, date)
-        push(date)
     except Exception as e:
         print(e)
 
