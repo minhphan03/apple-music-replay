@@ -10,14 +10,15 @@ def main():
         with open('C:\\Users\\User\\Downloads\\Replay 2021.txt', 'r', encoding='utf-16') as file:
             raw = file.read().split('\n')[:101]
 
-        raw[0] = raw[0].split('\t')[:2] + raw[0].split('\t')[3:4] + raw[0].split('\t')[9:10] + raw[0].split('\t')[11:12]
+        #extract the necessary data
+        raw[0] = raw[0].split('\t')[:2] + raw[0].split('\t')[3:4] + raw[0].split('\t')[9:10] + raw[0].split('\t')[11:12] + raw[0].split('\t')[25:26]
         raw[0].insert(0, 'Position')
         for i in range(1, len(raw)):
-            raw[i] = raw[i].split('\t')[:2]+raw[i].split('\t')[3:4] + raw[i].split('\t')[9:10] + time(raw[i].split('\t')[11:12])
+            raw[i] = raw[i].split('\t')[:2]+raw[i].split('\t')[3:4] + raw[i].split('\t')[9:10] + time(raw[i].split('\t')[11:12]) + raw[i].split('\t')[25:26]
             raw[i].insert(0, i)
 
         # for i in raw:
-        #     print(i[0], i[1], i[2], i[3])
+        #     print(i[0], i[1], i[2], i[3], i[4], i[5], i[6])
         os.remove('C:\\Users\\User\\Downloads\\Replay 2021.txt')
         [path, date] = check()
         os.chdir(path)
@@ -40,7 +41,7 @@ def markdown(arr: list, date):
     for line in arr:
         for n in line:
             temp.append(n)
-    mdFile.new_table(columns=6, rows=101, text=temp, text_align='center')
+    mdFile.new_table(columns=7, rows=101, text=temp, text_align='center')
     mdFile.create_md_file()
 
 def check()->list[str, str]:

@@ -1,7 +1,7 @@
 # Apple Music Replay Data Tracker
 **Apple Music Replay** is a weekly updated playlist that tracks and ranks songs based on amount of listening every year.
 It was introduced by Apple Music, a music streaming platform by Apple, in 2019 as a year-end playlist feature like 
-Spotify Wrapped whic is generated every year.
+Spotify Wrapped which is generated every year.
 
 **This is not an automatic tracker** as there are immeasurable obstacles to overcome
 automatic webscraping such as two-factor authentication (remote Apple Music) and OS navigation (local iTunes). 
@@ -14,6 +14,4 @@ folders by week, each of them includes:
   
 * a table in markdown file for viewing purposes.
 
-* a txt file: the original file used
-
-I only include 5 fields in this project (no. id, song title, artist, and album title) for simplicity.
+I only include 6 fields in this project (no. id, song title, artist, album title, genre, and song length) for simplicity.
