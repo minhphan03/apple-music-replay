@@ -4,18 +4,16 @@ import os
 import datetime
 import csv
 from mdutils.mdutils import MdUtils
-from git import Repo
-import git
 #csv and markdown files
 def main():
     try:
         with open('C:\\Users\\User\\Downloads\\Replay 2021.txt', 'r', encoding='utf-16') as file:
             raw = file.read().split('\n')[:101]
 
-        raw[0] = raw[0].split('\t')[:2] + raw[0].split('\t')[3:4]
+        raw[0] = raw[0].split('\t')[:2] + raw[0].split('\t')[3:4] + raw[0].split('\t')[9:10] + raw[0].split('\t')[11:12]
         raw[0].insert(0, 'Position')
         for i in range(1, len(raw)):
-            raw[i] = raw[i].split('\t')[:2]+raw[i].split('\t')[3:4]
+            raw[i] = raw[i].split('\t')[:2]+raw[i].split('\t')[3:4] + raw[i].split('\t')[9:10] + time(raw[i].split('\t')[11:12])
             raw[i].insert(0, i)
 
         # for i in raw:
@@ -42,7 +40,7 @@ def markdown(arr: list, date):
     for line in arr:
         for n in line:
             temp.append(n)
-    mdFile.new_table(columns=4, rows=101, text=temp, text_align='center')
+    mdFile.new_table(columns=6, rows=101, text=temp, text_align='center')
     mdFile.create_md_file()
 
 def check()->list[str, str]:
@@ -55,6 +53,9 @@ def check()->list[str, str]:
         print("Already has directory")
     finally:
         return [path, dir]
+
+def time(l:list)-> list:
+    return [str(datetime.timedelta(seconds=int(l[0])))]
 
 if __name__ == "__main__":
     main()
