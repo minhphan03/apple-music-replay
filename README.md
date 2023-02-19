@@ -8,11 +8,8 @@ automatic webscraping such as two-factor authentication (remote Apple Music) and
 I came to another solution using Apple MusicKit to develop this tracker, but it costs a subscription price so I thought 
 it would be better doing a manual export (3-click only) and running a batch script, which came at a no cost solution.
 
-Therefore, I have to manually export a data file of the playlist, which updates every weekend. On this repository are
-folders by week, each of them includes:
-* a csv file (delimited by a tab). 
-  
-* a table in markdown file for viewing purposes.
+Therefore, I have to manually export a data file of the playlist, which updates every weekend. In this repository are
+playlist folders, each of them contains comma-separated value (CSV) files of the playlist captured weekly.
 
 I only include 7 fields in the tables (no. id, song title, artist, album title, genre, song length, and number of plays) for simplicity.
 These fields are relevant for further data visualization and demonstration.
