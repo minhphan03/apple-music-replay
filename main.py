@@ -60,6 +60,3 @@ def check() -> List[str]:
 
 def time(l:List)-> List:
     return [str(datetime.timedelta(seconds=int(l[0])))]
-
-if __name__ == "__main__":
-    main()
